@@ -25,7 +25,7 @@ function renderServices() {
                 <td>${s.name}</td>
                 <td>${s.desc}</td>
                 <td><img src="${s.image}" style="max-width: 100px;" /></td>
-                <td>
+                <td class="btn-group">
                     <button data-index="${i}" class="btn-delete">Xóa</button>
                     <button data-index="${i}" class="btn-edit">Sửa</button>
                 </td>
@@ -40,7 +40,6 @@ btnAdd.onclick = () => {
     imgInput.value = "";
     editIndex = null;
 };
-
 saveBtn.onclick = () => {
     const name = nameInput.value.trim();
     const desc = descInput.value.trim();
@@ -73,7 +72,6 @@ serviceTableBody.onclick = (e) => {
         nameInput.value = service.name;
         descInput.value = service.desc;
         imgInput.value = service.image;
-
         modalAdd.style.display = "flex";
     }
 };

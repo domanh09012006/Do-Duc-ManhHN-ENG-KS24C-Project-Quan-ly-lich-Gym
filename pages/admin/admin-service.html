@@ -2,73 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/admin-page.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/admin-page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <nav class="nav-bar">
-            <h3>Admin Dashboard</h3>
-            <ul>
-                <li><a href="/pages/admin/admin-page.html">Quản lý lịch</a></li>
-                <li><a href="/pages/admin/admin-service.html">Quản lý dịch vụ</a></li>
-                <li><a href="/pages/index/homePage.html">Trang chủ</a></li>
-                <li><a href="/pages/auth/login.html" class="red" style="color: red;">Đăng xuất</a></li>
-            </ul>
-        </nav>
+  <div class="container">
+    <nav class="nav-bar">
+      <h3>Admin Dashboard</h3>
+      <ul>
+        <li><a href="/pages/admin/admin-page.html">Quản lý lịch</a></li>
+        <li><a href="/pages/admin/admin-service.html">Quản lý dịch vụ</a></li>
+        <li><a href="/pages/index/homePage.html">Trang chủ</a></li>
+        <li><a href="/pages/auth/login.html" class="red" style="color: red;">Đăng xuất</a></li>
+      </ul>
+    </nav>
 
-        <main>
-            <div class="header">
-                <h3 class="title">Quản lý dịch vụ</h3>
-                <button class="btn-add" id="btnAdd">Thêm dịch vụ mới</button>
-            </div>
-            <div class="service">
-                <table class="tableService">
-                    <thead class="headService">
-                        <tr class="headTr">
-                            <th>Tên dịch vụ</th>
-                            <th>Mô tả</th>
-                            <th>Hình ảnh</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody id="serviceTableBody"></tbody>
-                </table>
-            </div>
+    <main>
+      <div class="header">
+        <h3 class="title">Quản lý dịch vụ</h3>
+        <button class="btn-add" id="btnAdd">Thêm dịch vụ mới</button>
+      </div>
 
-        </main>
+      <div class="service">
+        <table class="tableService">
+          <thead class="headService">
+            <tr class="headTr">
+              <th>Tên dịch vụ</th>
+              <th>Mô tả</th>
+              <th>Hình ảnh</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="serviceTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Thêm  -->
+  <div id="modalAdd" class="modal">
+    <div class="content">
+      <h3>Thêm dịch vụ</h3>
+      <label for="">Tên dịch vụ</label>
+      <input type="text" id="serviceName" />
+      <label for="">Mô tả</label>
+      <input type="text" id="serviceDesc"  />
+      <label for="">Link hình ảnh</label>
+      <input type="text" id="serviceImage" />
+      <div class="modal-actions">
+        <button class="save-btn" id="saveServiceBtn">Lưu</button>
+        <button class="cancel-btn" id="cancelModalBtn">Hủy</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Modal Thêm Dịch Vụ -->
-    <div id="modalAdd" class="modal">
-        <div class="content">
-            <h3>Thêm dịch vụ</h3>
-            <input type="text" id="serviceName" placeholder="Tên dịch vụ" />
-            <input type="text" id="serviceDesc" placeholder="Mô tả" />
-            <input type="text" id="serviceImage" placeholder="Link hình ảnh" />
-            <button id="saveServiceBtn">Lưu</button>
-            <button id="cancelModalBtn">Hủy</button>
-        </div>
+  <!-- ModalXóa -->
+  <div id="modalConfirm" class="modal">
+    <div class="modal-content">
+      <p>Bạn có chắc muốn xoá dịch vụ này không?</p>
+      <div class="modal-actions">
+        <button class="save-btn" id="confirmYes">Có</button>
+        <button class="cancel-btn" id="confirmNo">Không</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Modal Xác Nhận Xóa -->
-    <div id="modalConfirm" class="modal">
-        <div class="modal-content">
-            <p>Bạn có chắc muốn xoá dịch vụ này không?</p>
-            <button id="confirmYes">Có</button>
-            <button id="confirmNo">Không</button>
-        </div>
-    </div>
-    <script src="/assets/js/service.js"></script>
-
+  <script src="/assets/js/service.js"></script>
 </body>
 
 </html>
