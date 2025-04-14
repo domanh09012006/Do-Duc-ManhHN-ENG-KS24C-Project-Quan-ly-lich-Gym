@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/booking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>GYM MANAGEMENT</h2>
+        <ul>
+            <li><a href="/pages/index/homePage.html">Trang chủ</a></li>
+        </ul>
+        <div id="userInfo" style="margin-left: auto; margin-right: 20px; display: flex; align-items: center;"></div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h2>Quản lý lịch tập</h2>
+            <button id="btn-add">Đặt lịch mới</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lớp học</th>
+                    <th>Ngày tập</th>
+                    <th>Khung giờ</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleTable"></tbody>
+        </table>
+        <div class="pagination" style="margin-top: 20px; text-align: center;"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Thêm lịch tập</h2>
+            <label>Chọn lớp học:</label>
+            <select id="classType" class="input">
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Zumba">Zumba</option>
+            </select>
+            <label>Chọn ngày:</label>
+            <input type="date" id="date" class="input">
+            <label>Chọn khung giờ:</label>
+            <select id="timeSlot" class="input">
+                <option value="6">6h-8h</option>
+                <option value="8">8h-10h</option>
+                <option value="10">10h-12h</option>
+                <option value="14">14h-16h</option>
+                <option value="16">16h-18h</option>
+                <option value="18">18h-20h</option>
+            </select>
+            <label>Họ tên:</label>
+            <input type="text" id="fullName" class="input" disabled>
+            <label>Email:</label>
+            <input type="email" id="email" class="input" disabled>
+            <p id="errorMessage"></p>
+            <div class="modal-buttons">
+                <button id="closeModal" class="closeModal">Hủy</button>
+                <button id="saveBtn" class="saveBtn">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h2>Xác nhận xóa</h2>
+            <p>Bạn có chắc chắn muốn xóa lịch tập này không?</p>
+            <div class="modal-buttons">
+                <button id="cancelDelete" class="closeModal">Hủy</button>
+                <button id="confirmDelete" class="saveBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/booking.js"></script>
+</body>
+
+</html>

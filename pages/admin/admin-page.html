@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý lịch</title>
+    <link rel="stylesheet" href="/assets/css/admin-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <h3>Admin Dashboard</h3>
+            <ul>
+                <li><a href="/pages/admin/admin-page.html">Quản lý lịch</a></li>
+                <li><a href="/pages/admin/admin-service.html">Quản lý dịch vụ</a></li>
+                <li><a href="/pages/index/homePage.html">Trang chủ</a></li>
+                <li><a href="/pages/auth/login.html" class="red" style="color: red;">Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Thống kê lịch tập</h2>
+            <div class="statistical">
+                <div class="box">
+                    <h3>Tổng số lịch Gym</h3>
+                    <span id="gymCount">0</span>
+                </div>
+                <div class="box">
+                    <h3>Tổng số lịch Yoga</h3>
+                    <span id="yogaCount">0</span>
+                </div>
+                <div class="box">
+                    <h3>Tổng số lịch Zumba</h3>
+                    <span id="zumbaCount">0</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="searchUser">
+        <h3>Bộ lọc</h3>
+        <div class="filter">
+            <div class="boxFilter">
+                <label for="classFilter">Lớp học</label>
+                <select id="classFilter">
+                    <option value="all">Tất cả</option>
+                    <option value="gym">Gym</option>
+                    <option value="yoga">Yoga</option>
+                    <option value="zumba">Zumba</option>
+                </select>
+            </div>
+            <div class="boxFilter">
+                <label for="filterEmail">Email</label>
+                <input type="email" id="filterEmail" placeholder="Tìm theo email" class="input" />
+            </div>
+            <div class="boxFilter">
+                <label for="filterDate">Ngày</label>
+                <input type="date" id="filterDate" class="input">
+            </div>
+        </div>
+    </div>
+
+    <div class="listUser">
+        <table>
+            <thead>
+                <tr>
+                    <th>Lớp học</th>
+                    <th>Ngày tập</th>
+                    <th>Khung giờ</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="userList"></tbody>
+        </table>
+    </div>
+
+    <!-- modal xac nhan -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Xác nhận</h3>
+            <p>Bạn có chắc chắn muốn xóa lịch tập này không?</p>
+            <div class="modal-actions">
+                <button id="confirmBtn">Có</button>
+                <button id="cancelBtn">Không</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal sua -->
+    <div class="modal edit-modal" id="editModal">
+        <div class="modal-content">
+            <h3>Sửa lịch tập</h3>
+            <div class="form-group">
+                <label for="editClass">Lớp học:</label>
+                <select id="editClass">
+                    <option value="Gym">Gym</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Zumba">Zumba</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editDate">Ngày tập:</label>
+                <input type="date" id="editDate" />
+            </div>
+            <div class="form-group">
+                <label for="editTime">Khung giờ:</label>
+                <select id="editTime">
+                    <option value="">-- Chọn khung giờ --</option>
+                    <option value="6h-8h">6h-8h</option>
+                    <option value="8h-10h">8h-10h</option>
+                    <option value="10h-12h">10h-12h</option>
+                    <option value="14h-16h">14h-16h</option>
+                    <option value="16h-18h">16h-18h</option>
+                    <option value="18h-20h">18h-20h</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editName">Họ tên:</label>
+                <input type="text" id="editName" disabled />
+            </div>
+            <div class="form-group">
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" disabled />
+            </div>
+            <p id="editError" class="error-message" style="color: red; margin-bottom: 10px; display: none;"></p>
+            <div class="modal-actions">
+                <button id="saveEditBtn">Cập nhật</button>
+                <button id="cancelEditBtn">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+body {
+    font-family: "Inter";
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #1f2937;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.container {
+    width:1200px;
+    margin: 20px 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#btn-add {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+.btn-logout{
+    width: 80px;
+    height: 25px;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: red;
+    border-radius: 3px;
+    color: white;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background: #f3f4f6;
+}
+.input{
+    height: 30px;
+    font-size: 16px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content:end;
+    gap: 10px;
+}
+.closeModal{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(155, 155, 155);
+    font-size: larger;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.saveBtn{
+    width: 50px;
+    height: 30px;
+    background-color: #3b82f6;
+    font-size: larger;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
+.fix{
+    width: 50px;
+    height: 30px;
+    background-color: green;
+    font-size: larger;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
+.delete{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(155, 155, 155);
+    font-size: larger;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
+#errorMessage{
+    color: red;
+}
+.btn-pagination {
+    padding: 6px 12px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.btn-pagination.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}

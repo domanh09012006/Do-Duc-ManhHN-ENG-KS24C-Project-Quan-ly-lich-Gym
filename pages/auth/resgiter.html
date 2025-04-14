@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng ký</h2>
+        <form id="registerForm">
+            <label for="fullName">Họ và Tên</label>
+            <input type="text" id="fullName" >
+            <span class="error" id="nameError"></span>
+
+            <label for="newEmail">Email</label>
+            <input type="" id="newEmail" >
+            <span class="error" id="emailError"></span>
+
+            <label for="newPassword">Mật khẩu</label>
+            <input type="password" id="newPassword" >
+            <span class="error" id="passwordError"></span>
+
+            <label for="confirmPassword">Xác nhận mật khẩu</label>
+            <input type="password" id="confirmPassword" >
+            <span class="error" id="confirmPasswordError"></span>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="/pages/auth/login.html">Đăng nhập</a></p>
+    </div>
+
+    <script src="/assets/js/login.js"></script>
+</body>
+</html>
